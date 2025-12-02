@@ -1,6 +1,27 @@
+<html>
+  <head></head>
+  <body>
 <h1>Càlcul de distàncies mínimes i rutes òptimes</h1>
 <p>Suposem que volem calcular la distància entre dos punts en el planeta Terra, necessitem dos coordenades per cada punt.</p>
 <p>Les dos coordenades que defineixen un punt a la Terra són la <b>latitud</b>, que mesura en el lateral de la Terra 
 quina distància (en graus) hi ha entre l'Equador i el Pol Nord. L'altra coordenada és la longitud i mesura la distància (en graus) entre el meridià de
 Greenwich (que va del Pol Nord al Pol Sud) i el punt que volem.</p>
 <img src="terra.png">
+    <p>A la imatge anterior podem veure la longitud i latitud de Martorell i volem saber la distància que hi té fins a Madrid.
+    Les coordenades de Martorell són:  41° 29' 15.9" N i 1° 56' 07.6" E, i les de Madrid són: 40°30′N i 3°40′O.</p>
+    <h2>Com calculem la distància?</h2>
+    <p>Suposem que la Terra és plana i hem de calcular la diferència de latitud i la diferència de longitud i, gràcies al Teorema de Pitàgores, sabrem 
+    la hipotenusa o distància mínima. Després suposarem que la Terra és una esfera i calcularem la distància amb la fórmula d'Haversine i, per últim, suposarem
+    que la Terra és un el·lipsoide i calcularem la distància amb les fórmules de Vincenty.</p>
+    <p>Primer hem de saber quants metres és un grau i per això utilitzarem la definició antiga de metre. Un metre és una deumilionèssima part de la
+    distància entre l'Equador i el Pol Nord. Això vol dir que 360 graus són 40000 quilòmetres. Podem fer un càlcul més exacte, amb el radi aproximat de la Terra (6371 km),
+    i 2*PI*6371=40030.173592 quilòmetres.</p>
+    <p>La diferència de latitud entre Martorell i Madrid és 58 minuts i 44 segons (aproximadament), és a dir, 58 minuts i 44:60 minuts igual a 
+    58,73333 minuts=58,73333:60 graus=0,9788 graus, que són 0,9788*40030:360 quilòmetres=107,85 quilòmetres de diferència de latitud entre
+    Martorell i Madrid.</p>
+    <p>La diferència de longitud és de 1º 43' 52", la passem a graus. 52 segons són 0,86666 minuts, és a dir, en total 43,8666 minuts, que a la vegada
+    són 0,731111, amb un total final de 1,731111º. Aquí no podem suposar que 360º són 40000 quilòmetres, sinó 40000km*cos de la latitud mitjana del dos punts
+    (41)=145,21 km. </p>
+
+    </body>
+  </html>
