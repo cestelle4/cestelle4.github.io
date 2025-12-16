@@ -8,8 +8,9 @@ quina distància (en graus) hi ha entre l'Equador i el Pol Nord. L'altra coorden
 Greenwich (que va del Pol Nord al Pol Sud) i el punt que volem.</p>
 <img src="terra.png">
     <p>A la imatge anterior podem veure la longitud i latitud de Martorell i volem saber la distància que hi té fins a Madrid.
-    Les coordenades de Martorell són:  41° 29' 15.9" N i 1° 56' 07.6" E, i les de Madrid són: 40°30′N i 3°40′O.</p>
-    <h2>Com calculem la distància?</h2>
+    Les coordenades de Martorell són:  41° 29' 15.9" N i 1° 56' 07.6" E, i les de Madrid són: 40°30′N i -3°40′O.</p>
+    <h1>Com calculem la distància?</h1>
+    <h2>Teorema de Pitàgores: la Terra és plana</h2>
     <p>Suposem que la Terra és plana i hem de calcular la diferència de latitud i la diferència de longitud i, gràcies al Teorema de Pitàgores, sabrem 
     la hipotenusa o distància mínima. Després suposarem que la Terra és una esfera i calcularem la distància amb la fórmula d'Haversine i, per últim, suposarem
     que la Terra és un el·lipsoide i calcularem la distància amb les fórmules de Vincenty.</p>
@@ -19,9 +20,20 @@ Greenwich (que va del Pol Nord al Pol Sud) i el punt que volem.</p>
     <p>La diferència de latitud entre Martorell i Madrid és 58 minuts i 44 segons (aproximadament), és a dir, 58 minuts i 44:60 minuts igual a 
     58,73333 minuts=58,73333:60 graus=0,9788 graus, que són 0,9788*40030:360 quilòmetres=107,85 quilòmetres de diferència de latitud entre
     Martorell i Madrid.</p>
-    <p>La diferència de longitud és de 1º 43' 52", la passem a graus. 52 segons són 0,86666 minuts, és a dir, en total 43,8666 minuts, que a la vegada
-    són 0,731111, amb un total final de 1,731111º. Aquí no podem suposar que 360º són 40000 quilòmetres, sinó 40000km*cos de la latitud mitjana del dos punts
-    (41)=145,21 km. </p>
+    <p>La diferència de longitud és de 4º 43' 52", la passem a graus. 52 segons són 0,86666 minuts, és a dir, en total 43,8666 minuts, que a la vegada
+    són 0,731111, amb un total final de 4,7311º*40000 km/360º*cos 41=396.734054999 km. Aquí no podem suposar que 360º són 40000 quilòmetres, sinó 40000km*cos de la latitud mitjana del dos punts
+    (41)=396.734054999 km. </p>
+    <p>Amb els dos números anteriors, fem pitàgores. La distància "D" serà l'arrel quadrada de 396.734054999^2+107,85^2. Es pot fer el càlcul a Google directament:</p>
+    <p>sqrt (396.734054999^2+107.85^2)</p>
+    <p>"sqrt" vol dir "square root" o arrel quadrada i el sombreret vol dir "elevat".</p>
+    <p>El resultat és 411.132013952 en línia recta, però no és del tot exacte perquè la Terra no és plana. L'error seria més gran quant més distància tenim.</p>
+    <h2>Fórmula de Haversine: la Terra és una esfera perfecta</h2>
+    <p>És una fórmula creada per José de Mendoza y Ríos al 1801, que ajudava a calcular les distàncies i les posicions dels vaixells.</p>
+    <p>hav θ = sin^2(θ/2), és a dir, el Haversinus d'un angle és el quadrat del sinus de la meitat de l'angle. En castellà, s'anomena "semiverseno".
+      <img src="haversine.png">⁠
+
+⁠</p>
+    
 
     </body>
   </html>
